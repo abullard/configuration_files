@@ -16,7 +16,7 @@ elif echo $(uname -s) | grep -q "Darwin"; then
     brew install z
     brew install bat
 else
-    echo "OS not detected, review script to correct"
+    echo "ERROR: OS not detected, review script to correct"
     exit
 fi
 
