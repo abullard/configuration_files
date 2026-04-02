@@ -5,7 +5,7 @@ if echo $(uname -s) | grep -q "Linux"; then
 elif echo $(uname -s) | grep -q "Darwin"; then
     source /opt/homebrew/etc/profile.d/z.sh
 else
-    echo "z is not properly sourced!!"
+    echo "ERROR: z is not properly sourced!!"
 fi
 
 # --- unalias existing commands
@@ -13,7 +13,13 @@ unalias z 2> /dev/null
 unalias env 2> /dev/null
 
 # --- This doesn't work right now, need to figure out this syntax
-ZSH_FUNC_PATH="$HOME/Developer/ConfigurationFiles/zsh/functions"
+if echo $(uname -s) | grep -q "Linux"; then
+    ZSH_FUNC_PATH="$HOME/Developer/configuration_files/zsh/functions/linux"
+elif echo $(uname -s) | grep -q "Darwin"; then
+    ZSH_FUNC_PATH="$HOME/Developer/configuration_files/zsh/functions/macos"
+else
+    echo "ERROR: Cannot find configuration_file functions to source!"
+fi
 FILES=($(ls $ZSH_FUNC_PATH))
 for FILE in $FILES; do 
     source $ZSH_FUNC_PATH/$FILE
