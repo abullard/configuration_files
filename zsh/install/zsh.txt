@@ -8,7 +8,7 @@ unalias z 2> /dev/null
 unalias env 2> /dev/null
 
 # --- load custom functions
-ZSH_FUNC_PATH="$HOME/Developer/ConfigurationFiles/zsh/functions"
+ZSH_FUNC_PATH="$HOME/Developer/configuration_files/zsh/functions"
 FILES=($(ls $ZSH_FUNC_PATH))
 for FILE in $FILES; do 
     source $ZSH_FUNC_PATH/$FILE
