@@ -3,13 +3,9 @@ function my_z {
     _z 2>&1 |
       fzf --nth 2.. \
           --no-sort \
-          --accept-nth 2..\
           --layout=reverse \
-          --highlight-line \
           --pointer="→" \
-          --ghost="input search term" \
-          --header="$(pwd | rev | cut -d/ -f1-3 | rev)" \
-          --footer="Recent Directories - [Enter] to navigate" \
+          --header="Recent Directories - $(pwd | rev | cut -d/ -f1-3 | rev)" \
           --preview 'ls -gha --color=always {2}'
   ) && cd "$dir"
 }

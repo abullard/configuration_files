@@ -3,10 +3,7 @@ function my_env {
             fzf --delimiter="\t" \
                 --with-nth=1 \
                 --layout=reverse \
-                --highlight-line \
                 --pointer="→" \
-                --ghost="input search term" \
-                --header="$(pwd | rev | cut -d/ -f1-3 | rev)" \
-                --footer="Environment Variables" \
+                --header="env - $(pwd | rev | cut -d/ -f1-3 | rev)" \
                 --preview="echo {2..}"
 }
