@@ -1,0 +1,59 @@
+# --- Setup Z
+
+if echo $(uname -s) | grep -q "Linux"; then
+    source $HOME/.z.sh
+elif echo $(uname -s) | grep -q "Darwin"; then
+    source /opt/homebrew/etc/profile.d/z.sh
+else
+    echo "z is not properly sourced!!"
+fi
+
+# --- unalias existing commands
+unalias z 2> /dev/null
+unalias env 2> /dev/null
+
+# --- This doesn't work right now, need to figure out this syntax
+ZSH_FUNC_PATH="$HOME/Developer/ConfigurationFiles/zsh/functions"
+FILES=($(ls $ZSH_FUNC_PATH))
+for FILE in $FILES; do 
+    source $ZSH_FUNC_PATH/$FILE
+done
+
+# --- alias mapping
+alias z="my_z"
+alias branch="branch"
+alias deck="deck"
+alias vimp="vimp"
+alias guid="guid"
+alias env="my_env"
+
+# - bash
+alias ll="ls -lha"
+alias guid="guid"
+alias c="clear"
+alias accio="alias | grep"
+alias editsh="vim ~/.zshrc"
+alias reload="source ~/.zshrc; clear"
+
+# - npm/pnpm
+alias npmview="npm view"
+alias npmlist="npm list --depth=0"
+alias akio="clear; npx @abullard/akio -d"
+
+# - git
+alias gc-="git checkout -"
+alias gpr="git pull -r"
+alias gcm="git commit -m"
+alias gpu="git push"
+alias gap="git add . --patch"
+alias changes='function _changes(){ git diff $1^1 $1 > changes.diff };_changes'
+
+# - AI
+alias codex="codex --sandbox read-only"
+alias copilot="copilot --banner"
+
+# --- fzf setup
+source <(fzf --zsh)
+
+# --- PS1 to setup prompt styling
+export PS1="%F{yellow}%D{%Y-%m-%d}%fT%F{green}%*%f: %F{blue}^%3d%f %F{red}$%f "
