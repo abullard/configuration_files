@@ -12,7 +12,6 @@ fi
 unalias z 2> /dev/null
 unalias env 2> /dev/null
 
-# --- This doesn't work right now, need to figure out this syntax
 if echo $(uname -s) | grep -q "Linux"; then
     ZSH_FUNC_PATH="$HOME/Developer/configuration_files/zsh/functions/linux"
 elif echo $(uname -s) | grep -q "Darwin"; then
@@ -32,6 +31,7 @@ alias deck="deck"
 alias vimp="vimp"
 alias guid="guid"
 alias env="my_env"
+alias lssh="my_ssh"
 
 # - bash
 alias ll="ls -lha"
