@@ -15,6 +15,8 @@ elif echo $(uname -s) | grep -q "Darwin"; then
     brew install fzf
     brew install z
     brew install bat
+    brew install herdr
+    brew install jq # used for herdr multi-plexing
 else
     echo "ERROR: OS not detected, review script to correct"
     exit

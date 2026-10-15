@@ -26,6 +26,7 @@ done
 
 # --- alias mapping
 alias z="my_z"
+alias pushz="pushz"
 alias branch="branch"
 alias deck="deck"
 alias vimp="vimp"
@@ -53,10 +54,6 @@ alias gcm="git commit -m"
 alias gpu="git push"
 alias gap="git add . --patch"
 alias changes='function _changes(){ git diff $1^1 $1 > changes.diff };_changes'
-
-# - AI
-alias codex="codex --sandbox read-only"
-alias copilot="copilot --banner"
 
 # --- fzf setup
 source <(fzf --zsh)
