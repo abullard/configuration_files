@@ -9,6 +9,9 @@ if echo $(uname -s) | grep -q "Linux"; then
     sudo apt install fzf
     curl https://raw.githubusercontent.com/rupa/z/master/z.sh -o $HOME/.z.sh
     sudo apt install bat
+    curl -fsSL https://herdr.dev/install.sh | sh
+    sudo apt install jq # used for herdr multi-plexing
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 elif echo $(uname -s) | grep -q "Darwin"; then
     echo "MacOS installation detected: "
     echo ""
@@ -17,6 +20,7 @@ elif echo $(uname -s) | grep -q "Darwin"; then
     brew install bat
     brew install herdr
     brew install jq # used for herdr multi-plexing
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 else
     echo "ERROR: OS not detected, review script to correct"
     exit

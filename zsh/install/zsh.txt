@@ -40,7 +40,7 @@ alias guid="guid"
 alias c="clear"
 alias accio="alias | grep"
 alias editsh="vim ~/.zshrc"
-alias reload="source ~/.zshrc; clear"
+alias reload="echo 'reloading...'; source ~/.zshrc; clear"
 
 # - npm/pnpm
 alias npmview="npm view"

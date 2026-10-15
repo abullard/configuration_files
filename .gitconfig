@@ -1,25 +1,38 @@
 [alias]
 # List all aliases
   la = "!git config -l | grep alias | cut -c 7-"
-  co = checkout
+  sw = switch
   st = status
-  del = branch -D
-  unstage = restore --staged
 # PRs will show commits pushed by this command with a tag that it was a history rewrite
   please = push --force-with-lease
 # ! tells git to execute with shell, set the upstream by outputting the current branch
   setup = "!git push --set-upstream origin $(git branch --show-current)"
-# checkout branch
-  cob = checkout -b
-# shows diff of locally staged changes in CLI environment
+# Put all staged files back into unstaged zone 
+  restage = "restore --staged ."
+# switch create branch
+  scb = switch -c 
+# show a diff of staged files and HEAD commit
   diffs = diff --staged
+# delete a specified branch
+  del = branch -D 
 # Set me back to the tip of master
   crap = !git add . && git reset --hard HEAD
+# create a patch file with the current change set
+  mkpatch = !git diff --cached > changes.patch
 # Let me change the previous commit
   amend = commit -a --amend
 # add patches for unstaged files
   patch = add --patch
+# Logs with colors and date as 1 hour ago
+  ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
 # Logs with colors and normal dates
   ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
 # Log commit with each file changed and +/- for it
   ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+# Log graph
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[user]
+	email = email-here
+	name = name-here
+[pull]
+	rebase = true
