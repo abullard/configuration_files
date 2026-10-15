@@ -1,3 +1,5 @@
+# 10/15/2026 AJB: this is deprecated, I'm just leaving it here for ollama reference
+
 # !bin/bash
 
 # 1. Start Ollama service
@@ -11,6 +13,6 @@
 # /save gpt-oss:20b
 # ctrl^c
 
-function copilot {
-    OLLAMA_ORIGINS=app://obsidian.md* ollama serve
-}
+# function copilot {
+#     OLLAMA_ORIGINS=app://obsidian.md* ollama serve
+# }

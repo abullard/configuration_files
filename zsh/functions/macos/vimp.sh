@@ -1,5 +1,5 @@
 function vimp {
-    ls -p | grep -v / | \
+    ls -pa | grep -v / | \
             fzf --layout=reverse \
                 --highlight-line \
                 --pointer="→" \
