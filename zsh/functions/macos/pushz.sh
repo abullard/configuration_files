@@ -1,3 +1,7 @@
+# ADR 0001 - 10/18/2026 - abullard
+# This executes a pushd from your most recently used directories using fzf.
+# Tradeoff: You can't pushd ANYWHERE on the PC, just your most recently used directories.
+
 function pushz {
   local dir=$(
     _z 2>&1 |

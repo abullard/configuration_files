@@ -1,3 +1,5 @@
+# ========= START CONFIGURATION_FILES SETUP =========
+
 # --- Setup Z
 
 if echo $(uname -s) | grep -q "Linux"; then
@@ -12,6 +14,7 @@ fi
 unalias z 2> /dev/null
 unalias env 2> /dev/null
 
+# --- source all custom bash scripts for the terminal
 if echo $(uname -s) | grep -q "Linux"; then
     ZSH_FUNC_PATH="$HOME/Developer/configuration_files/zsh/functions/linux"
 elif echo $(uname -s) | grep -q "Darwin"; then
@@ -33,6 +36,8 @@ alias vimp="vimp"
 alias guid="guid"
 alias env="my_env"
 alias lssh="my_ssh"
+alias pal="pal"
+alias fls="fls"
 
 # - bash
 alias ll="ls -lha"
@@ -48,11 +53,10 @@ alias npmlist="npm list --depth=0"
 alias akio="clear; npx @abullard/akio -d"
 
 # - git
-alias gc-="git checkout -"
-alias gpr="git pull -r"
+alias cleargitcreds="git credential-cache exit"
+alias gs-="git switch -"
 alias gcm="git commit -m"
 alias gpu="git push"
-alias gap="git add . --patch"
 alias changes='function _changes(){ git diff $1^1 $1 > changes.diff };_changes'
 
 # --- fzf setup
@@ -60,3 +64,5 @@ source <(fzf --zsh)
 
 # --- PS1 to setup prompt styling
 export PS1="%F{yellow}%D{%Y-%m-%d}%fT%F{green}%*%f: %F{blue}^%3d%f %F{red}$%f "
+
+# ========= END CONFIGURATION_FILES SETUP =========
