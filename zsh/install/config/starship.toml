@@ -1,0 +1,23 @@
+add_newline = false
+format = '$directory@ $time$git_branch$git_status$character'
+
+[time]
+format='[\[$time\]](fg:yellow) '
+disabled = false
+time_format = '%T'
+
+[git_branch]
+symbol = 'git:'
+
+[git_status]
+ahead = '↑${count}'
+behind = '↓${count}'
+diverged = '↑${ahead_count}↓${behind_count}'
+modified = '!${count}'
+staged = '+${count}'
+untracked = '?${count}'
+stashed = '$${count}'
+
+[character]
+success_symbol = '[>](bold green)'
+error_symbol = '[>](bold red)'

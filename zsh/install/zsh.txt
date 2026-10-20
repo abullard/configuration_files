@@ -37,15 +37,16 @@ alias guid="guid"
 alias env="my_env"
 alias lssh="my_ssh"
 alias pal="pal"
-alias fls="fls"
+# alias fls="fls" # needs some fine tuning, or deleted
 
 # - bash
 alias ll="ls -lha"
 alias guid="guid"
 alias c="clear"
 alias accio="alias | grep"
-alias editsh="vim ~/.zshrc"
-alias reload="echo 'reloading...'; source ~/.zshrc; clear"
+alias editsh="vim $HOME/.zshrc"
+alias editprofile="vim $HOME/.zprofile"
+alias reload="echo 'reloading...'; source $HOME/.zprofile; source $HOME/.zshrc; clear"
 
 # - npm/pnpm
 alias npmview="npm view"
@@ -62,7 +63,10 @@ alias changes='function _changes(){ git diff $1^1 $1 > changes.diff };_changes'
 # --- fzf setup
 source <(fzf --zsh)
 
-# --- PS1 to setup prompt styling
+# --- PS1 for default prompt styling (if needed)
 export PS1="%F{yellow}%D{%Y-%m-%d}%fT%F{green}%*%f: %F{blue}^%3d%f %F{red}$%f "
+
+# --- setup starship TUX prompt formatting (overwrites above PS1 formatting)
+eval "$(starship init zsh)"
 
 # ========= END CONFIGURATION_FILES SETUP =========
