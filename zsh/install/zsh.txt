@@ -1,7 +1,9 @@
 # ========= START CONFIGURATION_FILES SETUP =========
 
-# --- Setup Z
+# --- used for starship inspiration
+export INSPIRE_LINE="$(shuf -n 1 $HOME/Developer/configuration_files/zsh/assets/inspiration.txt)"
 
+# --- Setup Z
 if echo $(uname -s) | grep -q "Linux"; then
     source $HOME/.z.sh
 elif echo $(uname -s) | grep -q "Darwin"; then

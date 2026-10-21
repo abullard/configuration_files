@@ -1,8 +1,20 @@
 add_newline = false
-format = '$directory@ $time$git_branch$git_status$character'
+format = '📁 $directory@ $time$git_branch$git_status$character'
+right_format = '${custom.inspiration}'
+
+[custom.inspiration]
+command = 'echo $INSPIRE_LINE'
+style = 'bright-yellow'
+description = 'inspiration!'
+
+[directory]
+truncation_length = 3
+truncation_symbol = '../'
+truncate_to_repo = false
+repo_root_style = 'bold underline cyan'
 
 [time]
-format='[\[$time\]](fg:yellow) '
+format='[\[🕑 $time\]](fg:yellow) '
 disabled = false
 time_format = '%T'
 
