@@ -1,10 +1,11 @@
+#!/bin/bash 
 # --- author: @abullard 
 # --- date: 03/31/2026
 # please check this script for compatibility with your system before running it
 
 function install_homebrew() {
     # --- homebrew zsh setup
-    if [ ! type foo >/dev/null 2>&1 ]; then
+    if [ ! type brew >/dev/null 2>&1 ]; then
         echo 'homebrew installation not found. Installing...'
         echo ''
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -81,6 +82,6 @@ select strictreply in "Yes" "No"; do
     relaxedreply=${strictreply:-$REPLY}
     case $relaxedreply in
         Yes | yes | y ) imprint; break;;
-        No  | no  | n ) echo 'maybe do that first'; exit;;
+        No  | no  | n ) echo "Do that first. This program will append it's own configuration to these files."; exit;;
     esac
 done
