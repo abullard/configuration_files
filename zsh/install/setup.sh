@@ -1,5 +1,5 @@
-#!/bin/bash 
-# --- author: @abullard 
+#!/bin/bash
+# --- author: @abullard
 # --- date: 03/31/2026
 # please check this script for compatibility with your system before running it
 
@@ -30,6 +30,7 @@ function imprint() {
         curl -fsSL https://herdr.dev/install.sh | sh
         apt install jq # used for herdr multi-plexing
         curl -sS https://starship.rs/install.sh | sh
+        apt install ripgrep
     elif echo $(uname -s) | grep -q "Darwin"; then
         echo "MacOS installation detected: "
         echo ""
@@ -42,6 +43,7 @@ function imprint() {
         brew install herdr
         brew install jq # used for herdr multi-plexing
         brew install starship
+        brew install ripgrep
     else
         echo "ERROR: OS not detected, review script to correct"
         exit

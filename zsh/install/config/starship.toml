@@ -28,7 +28,7 @@ diverged = '↑${ahead_count}↓${behind_count}'
 modified = '!${count}'
 staged = '+${count}'
 untracked = '?${count}'
-stashed = '$${count}'
+stashed = '\$${count}'
 
 [character]
 success_symbol = '[>](bold green)'

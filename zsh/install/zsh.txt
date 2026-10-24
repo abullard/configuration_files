@@ -25,7 +25,7 @@ else
     echo "ERROR: Cannot find configuration_file functions to source!"
 fi
 FILES=($(ls $ZSH_FUNC_PATH))
-for FILE in $FILES; do 
+for FILE in $FILES; do
     source $ZSH_FUNC_PATH/$FILE
 done
 
@@ -40,6 +40,7 @@ alias env="my_env"
 alias lssh="my_ssh"
 alias pal="pal"
 # alias fls="fls" # needs some fine tuning, or deleted
+alias hl="rg --passthru"
 
 # - bash
 alias ll="ls -lha"
