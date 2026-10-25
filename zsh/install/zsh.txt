@@ -1,7 +1,7 @@
 # ========= START CONFIGURATION_FILES SETUP =========
 
 # --- used for starship inspiration
-export INSPIRE_LINE="$(shuf -n 1 $HOME/Developer/configuration_files/zsh/assets/inspiration.txt)"
+export INSPIRE_LINE="$(awk 'BEGIN{srand()} {l[NR]=$0} END{print l[int(rand()*NR)+1]}' $HOME/Developer/configuration_files/zsh/assets/inspiration.txt)"
 
 # --- Setup Z
 if echo $(uname -s) | grep -q "Linux"; then
