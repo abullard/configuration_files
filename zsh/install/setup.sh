@@ -31,6 +31,7 @@ function imprint() {
         apt install jq # used for herdr multi-plexing
         curl -sS https://starship.rs/install.sh | sh
         apt install ripgrep
+        snap install glow
     elif echo $(uname -s) | grep -q "Darwin"; then
         echo "MacOS installation detected: "
         echo ""
@@ -44,6 +45,7 @@ function imprint() {
         brew install jq # used for herdr multi-plexing
         brew install starship
         brew install ripgrep
+        brew install glow
     else
         echo "ERROR: OS not detected, review script to correct"
         exit
